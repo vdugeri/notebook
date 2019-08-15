@@ -1,5 +1,39 @@
 .navbar {
   display: flex;
+  align-items: center;
   width: 100vw;
-  height: 120px;
+  height: 8rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+
+  & .note-icon {
+    height: 4rem;
+    width: 4rem;
+  }
+
+  &__logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex: 0 0 20%;
+    list-style: none;
+
+    &--item {
+      display: flex;
+      align-items: center;
+    }
+
+    & a:link,
+    & a:visited {
+      text-decoration: none;
+      color: #777;
+    }
+  }
 }

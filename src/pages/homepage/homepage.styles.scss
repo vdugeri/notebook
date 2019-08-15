@@ -1,4 +1,9 @@
 .homepage {
   display: flex;
   width: 100vw;
+
+  &__main {
+    padding: 2rem;
+    width: 100%;
+  }
 }
