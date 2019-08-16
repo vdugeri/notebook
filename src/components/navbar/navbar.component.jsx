@@ -11,14 +11,14 @@ const Navbar = () => (
       <NoteIcon className="note-icon" />
     </div>
     <ul className="navbar__navigation">
-      <li className="navbaar__naviagation--item">
+      <li className="navbar__naviagation--item">
         <Link to="/">Home</Link>
       </li>
-      <li className="navbaar__naviagation--item">
+      <li className="navbar__naviagation--item">
         <Link to="/">About</Link>
       </li>
-      <li className="navbaar__naviagation--item">
-        <Link to="/">Login</Link>
+      <li className="navbar__naviagation--item">
+        <Link to="/new-note">New Note</Link>
       </li>
     </ul>
   </div>

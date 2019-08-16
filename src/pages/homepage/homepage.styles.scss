@@ -1,9 +1,14 @@
 .homepage {
   display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100vw;
 
   &__main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 2rem;
-    width: 100%;
+    width: 80%;
   }
 }
