@@ -7,9 +7,9 @@ import "./navbar.styles.scss";
 
 const Navbar = () => (
   <div className="navbar">
-    <div className="navbar__logo">
+    <Link to="/" className="navbar__logo">
       <NoteIcon className="note-icon" />
-    </div>
+    </Link>
     <ul className="navbar__navigation">
       <li className="navbar__naviagation--item">
         <Link to="/">Home</Link>
@@ -18,7 +18,7 @@ const Navbar = () => (
         <Link to="/">About</Link>
       </li>
       <li className="navbar__naviagation--item">
-        <Link to="/new-note">New Note</Link>
+        <Link to="/">Login</Link>
       </li>
     </ul>
   </div>

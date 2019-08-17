@@ -2,8 +2,9 @@ import { noteActionTypes } from "./note.types";
 import { addItemToNotes } from "./notes.utils";
 
 const INITIAL_STATE = {
-  notes: [],
-  hidden: true
+  noteItems: [],
+  hidden: true,
+  note: {}
 };
 
 const notesReducer = (state = INITIAL_STATE, { type, payload }) => {
@@ -16,7 +17,12 @@ const notesReducer = (state = INITIAL_STATE, { type, payload }) => {
     case noteActionTypes.CREATE_NOTE:
       return {
         ...state,
-        notes: addItemToNotes(state.notes, payload)
+        noteItems: addItemToNotes(state.noteItems, payload)
+      };
+    case noteActionTypes.SELECT_NOTE:
+      return {
+        ...state,
+        note: payload
       };
     default:
       return state;

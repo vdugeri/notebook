@@ -1,0 +1,12 @@
+.note-preview {
+  display: flex;
+  font-size: 1.8rem;
+  font-weight: 300;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+
+  &:hover {
+    font-size: 2rem;
+  }
+}

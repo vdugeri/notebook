@@ -3,12 +3,37 @@
   align-items: center;
   justify-content: center;
   width: 100vw;
+  min-height: 92vh;
+
+  &__button-container {
+    align-self: flex-end;
+    position: absolute;
+    top: 10%;
+    right: 5%;
+  }
+
+  &__note {
+    display: flex;
+    width: 50vw;
+    height: 50vh;
+  }
+
+  &__note-form {
+    position: absolute;
+    top: 25%;
+    left: 27%;
+    width: 100%;
+  }
 
   &__main {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    width: 80%;
+    width: 100%;
+    min-height: 92vh;
+    background: url(../../assets/notebook.png) no-repeat center center;
+    background-size: cover;
   }
 }

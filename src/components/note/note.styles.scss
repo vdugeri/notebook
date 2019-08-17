@@ -1,0 +1,14 @@
+.note {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  font-size: 1.8rem;
+  padding: 2rem;
+
+  & h3 {
+    color: #777;
+    margin-bottom: 2rem;
+  }
+}

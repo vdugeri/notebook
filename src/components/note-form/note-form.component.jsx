@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { createNote } from "../../redux/note/note.actions";
+import { createNote, toggleFormHidden } from "../../redux/note/note.actions";
 
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
@@ -28,19 +28,21 @@ class NoteForm extends React.Component {
     const { title, body } = this.state;
 
     if (title && body) {
-      this.props.addNote({ title, body });
-
-      this.setState({
-        title: "",
-        body: ""
-      });
+      const { hideForm, addNote } = this.props;
+      addNote({ title, body });
+      hideForm();
     }
   };
 
   render() {
     const { title, body } = this.state;
+    const { hideForm } = this.props;
+
     return (
       <form className="note-form" onSubmit={this.handleSubmit}>
+        <span className="note-form__close" onClick={hideForm}>
+          &#10007;
+        </span>
         <FormInput
           handleChange={this.handleChange}
           value={title}
@@ -62,7 +64,8 @@ class NoteForm extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  addNote: note => dispatch(createNote(note))
+  addNote: note => dispatch(createNote(note)),
+  hideForm: () => dispatch(toggleFormHidden())
 });
 
 export default connect(
