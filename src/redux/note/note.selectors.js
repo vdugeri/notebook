@@ -16,3 +16,8 @@ export const selectHidden = createSelector(
   [selectNotes],
   notes => notes.hidden
 );
+
+export const selectNoteToEdit = createSelector(
+  [selectNotes],
+  notes => notes.noteToEdit
+);

@@ -11,3 +11,15 @@ export const deleteNoteItem = (notes, noteToDelete) => {
 
   return notes;
 };
+
+export const editNote = (notes, editedNote) => {
+  const existingNote = notes.find(note => note.title === editedNote.title);
+
+  if (existingNote) {
+    existingNote.body = editedNote.body;
+
+    return [...notes];
+  }
+
+  return notes;
+};

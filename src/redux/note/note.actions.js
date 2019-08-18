@@ -19,6 +19,11 @@ export const deleteNote = note => ({
   payload: note
 });
 
+export const startEdit = note => ({
+  type: noteActionTypes.START_EDIT,
+  payload: note
+});
+
 export const editNote = note => ({
   type: noteActionTypes.EDIT_NOTE,
   payload: note
