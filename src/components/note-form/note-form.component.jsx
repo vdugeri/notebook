@@ -57,7 +57,7 @@ class NoteForm extends React.Component {
           label="Note"
           name="body"
         />
-        <CustomButton>Submit</CustomButton>
+        <CustomButton>Save</CustomButton>
       </form>
     );
   }

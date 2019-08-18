@@ -1,5 +1,5 @@
 import { noteActionTypes } from "./note.types";
-import { addItemToNotes } from "./notes.utils";
+import { addItemToNotes, deleteNoteItem } from "./notes.utils";
 
 const INITIAL_STATE = {
   noteItems: [],
@@ -23,7 +23,12 @@ const notesReducer = (state = INITIAL_STATE, { type, payload }) => {
       return {
         ...state,
         note: payload
-      };
+			};
+		case noteActionTypes.DELETE_NOTE:
+			return {
+				...state,
+				noteItems: deleteNoteItem(state.noteItems, payload)
+			}
     default:
       return state;
   }

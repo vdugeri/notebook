@@ -7,6 +7,23 @@
   font-size: 1.8rem;
   padding: 2rem;
 
+  &__actions {
+    align-self: flex-end;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+
+    & .delete {
+      color: #f00;
+      padding: 1rem;
+      cursor: pointer;
+    }
+
+    & .edit {
+      color: #e67e22;
+      cursor: pointer;
+    }
+  }
+
   & h3 {
     color: #777;
     margin-bottom: 2rem;

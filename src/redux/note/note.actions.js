@@ -13,3 +13,13 @@ export const selectNote = note => ({
   type: noteActionTypes.SELECT_NOTE,
   payload: note
 });
+
+export const deleteNote = note => ({
+  type: noteActionTypes.DELETE_NOTE,
+  payload: note
+});
+
+export const editNote = note => ({
+  type: noteActionTypes.EDIT_NOTE,
+  payload: note
+});

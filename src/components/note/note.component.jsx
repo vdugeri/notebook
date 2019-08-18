@@ -1,16 +1,30 @@
 import React from "react";
-import { createStructuredSelector } from "reselect";
 import { connect } from "react-redux";
-
-import { selectNote } from "../../redux/note/note.selectors";
+import { deleteNote, selectNote } from "../../redux/note/note.actions";
 
 import "./note.styles.scss";
 
-const Note = ({ note }) => (
+const Note = ({ note, deleteNote }) => (
   <div className="note">
+    <div className="note__actions">
+      <span className="delete" onClick={() => deleteNote(note)}>
+        &#10007;
+      </span>
+      <span className="edit">&#9998;</span>
+    </div>
     <h3>{note.title}</h3>
     <p>{note.body}</p>
   </div>
 );
 
-export default Note;
+const mapDispatchToProps = dispatch => ({
+  deleteNote: note => {
+    dispatch(deleteNote(note));
+    dispatch(selectNote(null));
+  }
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Note);
