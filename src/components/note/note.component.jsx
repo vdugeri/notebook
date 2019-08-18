@@ -8,14 +8,17 @@ import {
 
 import "./note.styles.scss";
 
-const Note = ({ note, handleNoteDelete, handleNoteEdit }) => (
+const Note = ({ note, handleNoteDelete, handleNoteEdit, selectNote }) => (
   <div className="note">
     <div className="note__actions">
-      <span className="delete" onClick={() => handleNoteDelete(note)}>
-        <i className="fa fa-trash" />
+      <span className="close" onClick={() => selectNote(null)}>
+        &#10007;
       </span>
       <span className="edit" onClick={() => handleNoteEdit(note)}>
         &#9998;
+      </span>
+      <span className="delete" onClick={() => handleNoteDelete(note)}>
+        <i className="fa fa-trash" />
       </span>
     </div>
     <h3>{note.title}</h3>
@@ -28,7 +31,8 @@ const mapDispatchToProps = dispatch => ({
     dispatch(deleteNote(note));
     dispatch(selectNote(null));
   },
-  handleNoteEdit: note => dispatch(startEdit(note))
+  handleNoteEdit: note => dispatch(startEdit(note)),
+  selectNote: note => dispatch(selectNote(note))
 });
 
 export default connect(
